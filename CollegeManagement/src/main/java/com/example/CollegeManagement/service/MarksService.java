@@ -15,7 +15,7 @@ public class MarksService {
   private MarksRepository marksRepository;
 
   // In your service class
-  public List<MarkDto> getFirst10Marks() {
+  public List<MarkDto> getTop10Marks() {
     List<Marks> first10Marks = marksRepository.findTop10ByOrderByStudentNameAsc();
     return convertToDtoList(first10Marks);
   }

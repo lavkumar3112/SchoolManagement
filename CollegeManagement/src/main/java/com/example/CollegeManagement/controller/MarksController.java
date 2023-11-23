@@ -1,5 +1,6 @@
 package com.example.CollegeManagement.controller;
 
+import com.example.CollegeManagement.model.MarkDto;
 import com.example.CollegeManagement.model.Marks;
 import com.example.CollegeManagement.service.MarksService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class MarksController {
   private MarksService marksService;
 
   @GetMapping("/top10")
-  public ResponseEntity<List<Marks>> getTop10Marks() {
-    List<Marks> top10Marks = marksService.getTop10Marks();
+  public ResponseEntity<List<MarkDto>> getTop10Marks() {
+    List<MarkDto> top10Marks = marksService.getTop10Marks();
     return new ResponseEntity<>(top10Marks, HttpStatus.OK);
   }
 
